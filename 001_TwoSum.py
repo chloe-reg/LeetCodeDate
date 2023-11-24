@@ -8,10 +8,22 @@ class Solution:
             for j in range(i+1, len(nums)):
                 if nums[i] + nums[j] == target:
                     return [i, j]
-        return [0, 0]
+        return [] # not found
+    
+    # 字典索引法 - 時間複雜度 O(n)
+    def twoSumHashMap(self, nums: list[int], target: int) -> list[int]:
+        num_dict = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in num_dict:
+                return [num_dict[complement], i]
+            num_dict[num] = i
+        return [] # not found
+        
 
 
 nums = [2, 6, 4]
 target = 6
+result = Solution.twoSumHashMap(Solution, nums, target)
 
-print(Solution.twoSum(Solution, nums, target))
+print(result)
