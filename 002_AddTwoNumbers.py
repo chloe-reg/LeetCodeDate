@@ -18,13 +18,13 @@ class Solution:
         node1 = l1
         node2 = l2
         
-        while node1 != None or node2 != None or carry != 0:
+        while node1 is not None or node2 is not None or carry != 0:
             node_sum = carry
-            if node1 == None:
+            if node1 is None:
                 node_sum += 0
             else:
                 node_sum += node1.val
-            if node2 == None:
+            if node2 is None:
                 node_sum += 0
             else:
                 node_sum += node2.val
@@ -35,9 +35,9 @@ class Solution:
             result_node.next = ListNode(node_sum)
             result_node = result_node.next
             
-            if node1 != None:
+            if node1 is not None:
                 node1 = node1.next
-            if node2 != None:
+            if node2 is not None:
                 node2 = node2.next
         
         result_node_head = result_node_head.next
@@ -64,4 +64,8 @@ class Solution:
 使用數組存儲中間結果： 
     將兩個連結列表的數字提取出來，轉換成數組，然後執行數組的加法操作，最後將結果轉換回連結列表。
     這種方法同樣具有清晰的邏輯結構。時間複雜度為 O(max(m, n))。
+'''
+
+'''
+Use "is/is not" to compare with "None" is better than use "==/!=".
 '''
