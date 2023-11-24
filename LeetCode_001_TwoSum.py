@@ -15,5 +15,3 @@ nums = [2, 6, 4]
 target = 6
 
 print(Solution.twoSum(Solution, nums, target))
-
-print(enumerate(nums))
